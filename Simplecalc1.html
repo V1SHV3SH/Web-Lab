@@ -14,19 +14,53 @@
     </tr>
     <tr>
       <td>Value 1</td>
-      <td><input type="text"></td>
+      <td><input type="text" value="0" id="value1"/></td>
       <td>Value 2</td>
-      <td><input type="text"></td>
+      <td><input type="text" value="0" id="value2"/></td>
     </tr>
     <tr>
-      <td><input type="button" value="Sum +"></td>
-      <td><input type="button" value="Diff -"></td>
-      <td><input type="button" value="Product x"></td>
-      <td><input type="button" value="Quotient ÷"></td>
+      <td><input type="button" value="Sum +" id="add" onclick="calc(this.id)"/></td>
+      <td><input type="button" value="Diff -" id="dif" onclick="calc(this.id)"/></td>
+      <td><input type="button" value="Product x" id="mul" onclick="calc(this.id)"/></td>
+      <td><input type="button" value="Quotient ÷" id="div" onclick="calc(this.id)"/></td>
     </tr>
     <tr>
-
+        <td>Answer</td>
+        <td><input type="text" id="sol" value="" disabled></td>
+        <td colspan="2"><input type="button" value="Clear" onclick="clr()"/></td>
     </tr>
   </table>
+  <script type="text/javascript">
+
+    function calc(clickid)
+    {
+      var val1=parseFloat(document.getElementById("value1").value);
+      var val2=parseFloat(document.getElementById("value2").value);
+
+        if(isNaN(val1)||isNaN(val2))
+        alert("Enter a Valid Number");
+
+        else if(clickid=="add")
+          document.getElementById("sol").value=val1+val2;
+
+        else if(clickid=="dif")
+          document.getElementById("sol").value=val1-val2;
+
+        else if(clickid=="mul")
+          document.getElementById("sol").value=val1*val2;
+
+        else if (clickid=="div")
+          document.getElementById("sol").value=val1/val2;
+
+        }
+        function clr()
+        {
+          value1.value="0";
+          value2.value="0";
+          sol.value="";
+        }
+
+
+  </script>
 </body>
 </html>
