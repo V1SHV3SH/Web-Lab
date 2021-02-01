@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Size Growing and Shrinking</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <script type="text/javascript">
+
+      var fonts=5;
+      var p=document.getElementById("demo");
+      var string1=setInterval(growing,1000);
+
+      function growing()
+      {
+        p.innerHTML='text Growing';
+        p.setAttribute('style', "font-size:"+fonts+"px; color:red");
+        fonts=fonts+5;
+        if (fonts>=100)
+        {
+          clearInterval(string1);
+          var string2=setInterval(shrinking,1000);
+        }
+      }
+
+      function shrinking()
+      {
+        fonts=fonts-5;
+        p.innerHTML='Text Shrinking';
+        p.setAttribute('style', "font-size:"+fonts+"px; color:green");
+        if (fonts===20)
+        {
+          clearInterval(string2);
+        }
+      }
+    </script>
+  </body>
+</html>
