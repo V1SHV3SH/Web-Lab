@@ -1,0 +1,36 @@
+<html>
+  <body>
+    <script type="text/javascript">
+      var str=prompt("Enter the string");
+      if(!isNaN(str))
+      {
+        var num,rev=0,rem;
+        num=parseInt(str);
+        while(num!=0)
+        {
+          rem=num%10;
+          num=parseInt(num/10);
+          rev=rev*10+rem;
+
+        }
+        alert("The reverse of a given number"+str+"is"+rev);
+      }
+      else
+      {
+        str=str.toUpperCase();
+        for(var i=1;i<=str.length;i++)
+        {
+          var ch=str.charAt(i);
+          if(ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
+          break;
+        }
+        if(i<str.length)
+        alert("The left most psoition of vowel is"+(i+1)+"The character is"+str.charAt(i));
+        else {
+          alert("No vowels found");
+        }
+      }
+    </script>
+
+  </body>
+</html>
